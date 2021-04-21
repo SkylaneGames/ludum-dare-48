@@ -65,7 +65,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.2
         with:
-          name: game_linux
+          name: game_osx
           path: ./game.zip
           retention-days: 9
 
