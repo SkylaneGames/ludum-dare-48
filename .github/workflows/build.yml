@@ -5,10 +5,7 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     tags: v*
-    # branches: [ main ]
-  pull_request:
-    tags: v*
-    # branches: [ main ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -45,8 +42,8 @@ jobs:
     name: Deploy to itch.io
     env:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
-      itch_channel: <channel name> # e.g. jms777/gameName:web
-      itch_url: <your game url> #e.g. https://jms777.itch.io/brackeys2021-1 
+      itch_channel: jms777/ludum-dare-48:web # e.g. jms777/gameName:web
+      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     steps:
       - name: Download Game Artifact
         uses: actions/download-artifact@v2.0.8
