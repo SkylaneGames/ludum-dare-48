@@ -89,7 +89,7 @@ jobs:
           retention-days: 9
          
   deploy-webgl:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs: [build-webgl]
     name: Deploy to itch.io
     env:
@@ -107,11 +107,13 @@ jobs:
           Expand-Archive -Path butler.zip -DestinationPath .
           ./butler.exe -V
           ./butler.exe login
+        shell: powershell
       - name: Push to itch.io
         run: ./butler.exe push ./game.zip $env:itch_channel
+        shell: powershell
          
   deploy-win64:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs: [build-win64]
     name: Deploy to itch.io
     env:
@@ -129,11 +131,13 @@ jobs:
           Expand-Archive -Path butler.zip -DestinationPath .
           ./butler.exe -V
           ./butler.exe login
+        shell: powershell
       - name: Push to itch.io
         run: ./butler.exe push ./game.zip $env:itch_channel
+        shell: powershell
          
   deploy-osx:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs: [build-osx]
     name: Deploy to itch.io
     env:
@@ -151,11 +155,13 @@ jobs:
           Expand-Archive -Path butler.zip -DestinationPath .
           ./butler.exe -V
           ./butler.exe login
+        shell: powershell
       - name: Push to itch.io
         run: ./butler.exe push ./game.zip $env:itch_channel
+        shell: powershell
          
   deploy-linux:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs: [build-linux]
     name: Deploy to itch.io
     env:
@@ -173,8 +179,10 @@ jobs:
           Expand-Archive -Path butler.zip -DestinationPath .
           ./butler.exe -V
           ./butler.exe login
+        shell: powershell
       - name: Push to itch.io
         run: ./butler.exe push ./game.zip $env:itch_channel
+        shell: powershell
 
   notify:
     runs-on: self-hosted
