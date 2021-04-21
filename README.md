@@ -4,6 +4,11 @@
 # About
 Entry for the [48th Ludum Dare](https://ldjam.com/events/ludum-dare/48) game jam.
 
+Hosted on [itch.io](https://jms777.itch.io/ludum-dare-48)
+
+## Theme
+-- Enter theme here --
+
 # Contributors
 Name | Role
 -|-
