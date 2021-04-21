@@ -6,22 +6,22 @@ class BuildHelper
     
     static void PerformBuildWebGL()
     {
-        Build(BuildTarget.WebGL);
+        BuildPipeline.BuildPlayer(scenes, "../build", BuildTarget.WebGL, BuildOptions.None);
     }
     
     static void PerformBuildWin64()
     {
-        Build(BuildTarget.StandaloneWindows64);
+        BuildPipeline.BuildPlayer(scenes, "../build/game.exe", BuildTarget.StandaloneWindows64, BuildOptions.None);
     }
     
     static void PerformBuildOSX()
     {
-        Build(BuildTarget.StandaloneOSX);
+        BuildPipeline.BuildPlayer(scenes, "../build/game.app", BuildTarget.StandaloneOSX, BuildOptions.None);
     }
     
     static void PerformBuildLinux()
     {
-        Build(BuildTarget.StandaloneLinux64);
+        BuildPipeline.BuildPlayer(scenes, "../build/game.x86_64", BuildTarget.StandaloneLinux64, BuildOptions.None);
     }
 
     static void Build(BuildTarget target)
