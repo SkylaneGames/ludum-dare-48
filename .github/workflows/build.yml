@@ -185,10 +185,12 @@ jobs:
         shell: powershell
 
   notify:
-    runs-on: self-hosted
+    runs-on: windows-latest
     needs: [deploy-webgl]
     name: Notify Discord
     if: success() 
     steps:
-    - name: Notify Discord
-      run: Invoke-WebRequest -Method Post -Body @{content="New build deployed - $env:itch_url"} -Uri https://discord.com/api/webhooks/806215909349392416/50ZFHErCNojaeCcQ4x1U7RcwFYXoaPv5YG0uzeiioB7MNGQRGVYoqK_kZaUkocj3BMlK
+      - name: Notify Discord
+        run: Invoke-WebRequest -Method Post -Body @{content="New build deployed - $env:itch_url"} -Uri https://discord.com/api/webhooks/806215909349392416/50ZFHErCNojaeCcQ4x1U7RcwFYXoaPv5YG0uzeiioB7MNGQRGVYoqK_kZaUkocj3BMlK
+        shell: powershell
+
