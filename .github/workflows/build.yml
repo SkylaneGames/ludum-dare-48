@@ -95,7 +95,6 @@ jobs:
     env:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       itch_channel: jms777/ludum-dare-48:web # e.g. jms777/gameName:web
-      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     steps:
       - name: Download Game Artifact
         uses: actions/download-artifact@v2.0.8
@@ -119,7 +118,6 @@ jobs:
     env:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       itch_channel: jms777/ludum-dare-48:win64 # e.g. jms777/gameName:web
-      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     steps:
       - name: Download Game Artifact
         uses: actions/download-artifact@v2.0.8
@@ -143,7 +141,6 @@ jobs:
     env:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       itch_channel: jms777/ludum-dare-48:osx # e.g. jms777/gameName:web
-      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     steps:
       - name: Download Game Artifact
         uses: actions/download-artifact@v2.0.8
@@ -167,7 +164,6 @@ jobs:
     env:
       BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
       itch_channel: jms777/ludum-dare-48:linux # e.g. jms777/gameName:web
-      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     steps:
       - name: Download Game Artifact
         uses: actions/download-artifact@v2.0.8
@@ -188,6 +184,8 @@ jobs:
     runs-on: windows-latest
     needs: [deploy-webgl]
     name: Notify Discord
+    env:
+      itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
     if: success() 
     steps:
       - name: Notify Discord
