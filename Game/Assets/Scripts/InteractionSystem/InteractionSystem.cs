@@ -34,7 +34,6 @@ namespace Interaction
         private void OnTriggerStay2D(Collider2D collider)
         {
             var interactable = collider.GetComponent<IInteractable>();
-            Debug.Log($"Interaction hit - {interactable?.Name}");
 
             if (interactable != null && interactable != LastInteractable && interactable.CanInteract(Controller))
             {
