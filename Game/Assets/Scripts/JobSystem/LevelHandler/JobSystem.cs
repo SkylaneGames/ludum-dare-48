@@ -17,7 +17,7 @@ namespace MissionSystem.JobSystem
         public event JobRemoved JobRemoved;
 
         private IJobSimulator _jobSimulator = new JobSimulator.JobSimulator();
-        public List<MissionTask> _tasks;
+        public List<Item> AvailableItems;
         public float MinTimeToCompleteTaskSeconds = 30;
         public float MaxTimeToCompleteTaskSeconds = 60;
         public int MinTasks = 1;
@@ -56,9 +56,19 @@ namespace MissionSystem.JobSystem
 
             if (_jobSimulator.GetCurrentMissions().Count < Random.Range(MinTasks, MaxTasks))
             {
-                var job = _jobSimulator.AddNewMission(_tasks[Random.Range(0, _tasks.Count)], Random.Range(MinTimeToCompleteTaskSeconds, MaxTimeToCompleteTaskSeconds));
+                var item = GetRandomItem();
+                var job = _jobSimulator.AddNewMission(item, Random.Range(MinTimeToCompleteTaskSeconds, MaxTimeToCompleteTaskSeconds));
                 JobCreated?.Invoke(job);
             }
+        }
+
+        private Item GetRandomItem()
+        {
+            var item = AvailableItems[Random.Range(0, AvailableItems.Count)];
+
+            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length - 1);
+
+            return item;
         }
 
         public void StartLevel()

@@ -27,11 +27,11 @@ namespace MissionSystem.JobSimulator
         {
             _missions[missionId].CompleteMissionAsync();
         }
-        public IMission AddNewMission(ITask taskToComplete, float timeToComplete)
+        public IMission AddNewMission(Item item, float timeToComplete)
         {
             var mission = new Mission.Mission(timeToComplete)
             {
-                Task = taskToComplete,
+                Item = item,
                 IsComplete = false,
                 MissionId = Guid.NewGuid(),
             };
@@ -39,11 +39,11 @@ namespace MissionSystem.JobSimulator
             return mission;
         }
 
-        public IMission AddNewMission(ITask taskToComplete)
+        public IMission AddNewMission(Item item)
         {
             var mission = new Mission.Mission()
             {
-                Task = taskToComplete,
+                Item = item,
                 IsComplete = false,
                 MissionId = Guid.NewGuid()
             };

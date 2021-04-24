@@ -315,8 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfbfda527182c0448b7de8c267647f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tasks:
-  - {fileID: 11400000, guid: c161f8e9e55bd9d48be8f91e31278937, type: 2}
+  AvailableItems:
+  - {fileID: 11400000, guid: ce38cca72a17a06409f5af55cb855570, type: 2}
   MinTimeToCompleteTaskSeconds: 10
   MaxTimeToCompleteTaskSeconds: 30
   MinTasks: 1

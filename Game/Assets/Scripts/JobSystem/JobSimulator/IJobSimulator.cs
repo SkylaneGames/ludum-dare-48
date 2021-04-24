@@ -12,8 +12,8 @@ namespace MissionSystem.JobSimulator
     {
         public Dictionary<Guid, IMission> GetCurrentMissions();
         public void CompleteMission(Guid missionId);
-        public IMission AddNewMission(ITask taskToComplete, float timeToComplete);
-        public IMission AddNewMission(ITask taskToComplete);
+        public IMission AddNewMission(Item item, float timeToComplete);
+        public IMission AddNewMission(Item item);
         public Dictionary<Guid, IMission> RemoveMission(Guid missionId);
         public void UpdateMissions(float deltaTime);
     }

@@ -9,7 +9,7 @@ namespace MissionSystem.Mission
         public event MissionCompletedEvent MissionCompletedEvent;
         public event MissionFailedEvent MissionFailedEvent;
         public Guid MissionId { get; set; }
-        public ITask Task { get; set; }
+        public Item Item { get; set; }
         public bool IsComplete { get; set; }
         public float? TimeToComplete { get; set; }
         public float? TimeRemaining { get; set; }
@@ -31,7 +31,7 @@ namespace MissionSystem.Mission
         {
 
         }
-        
+
         public Mission(float timeToComplete)
         {
             TimeToComplete = timeToComplete;
