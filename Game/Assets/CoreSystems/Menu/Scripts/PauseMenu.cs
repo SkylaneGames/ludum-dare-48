@@ -5,7 +5,7 @@ using CoreSystems.TransitionSystem;
 
 namespace CoreSystems.MenuSystem
 {
-    public class PauseMenu : MonoBehaviour, IPauseMenu
+    public class PauseMenu : Singleton<PauseMenu>, IPauseMenu
     {
         public bool IsPaused { get; private set; }
 
@@ -18,14 +18,14 @@ namespace CoreSystems.MenuSystem
         {
             Time.timeScale = 0;
             IsPaused = true;
-            gameObject.SetActive(true);
+            transform.GetChild(0).gameObject.SetActive(true);
         }
 
         public void UnpauseGame()
         {
             Time.timeScale = 1;
             IsPaused = false;
-            gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
         }
 
         public void Back()
