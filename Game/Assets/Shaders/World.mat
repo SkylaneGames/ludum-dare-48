@@ -56,5 +56,5 @@ Material:
     - Scale: 122.51
     - Spillage: 1
     m_Colors:
-    - PlayerPos: {r: 0, g: 0, b: 0, a: 0}
+    - PlayerPos: {r: -0.346, g: 0.01, b: 0, a: 0}
   m_BuildTextureStacks: []
