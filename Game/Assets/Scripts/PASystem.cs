@@ -16,16 +16,16 @@ public class PASystem : MonoBehaviour
         PAGameObject.SetActive(false);
     }
 
-    public bool MakeAnnouncement(string message)
+    public bool MakeAnnouncement(Dialog dialog)
     {
         if (InUse)
         {
             return false;
         }
 
-        Text.text = message;
+        Text.text = dialog.Text;
 
-        StartCoroutine(DisplayAnnouncementFor(Duration));
+        StartCoroutine(DisplayAnnouncementFor(dialog.Duration));
 
         return true;
     }

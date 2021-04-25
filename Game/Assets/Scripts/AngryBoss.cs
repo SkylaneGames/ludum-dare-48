@@ -8,31 +8,31 @@ public class AngryBoss : Singleton<AngryBoss>
 {
     private PASystem _paSystem;
 
-    [Range(0f, 1f)] 
+    [Range(0f, 1f)]
     public float ResponseProbabilityFail = 0.25f;
 
     [Range(0f, 1f)]
     public float ResponseProbabilityShelfFull = 0.75f;
-    
+
     [Range(0f, 1f)]
     public float ResponseProbabilityWrongItem = 0.75f;
 
-    public List<string> JobFailDialog = new List<string>{
-        "Those shelves aren't going to stack themselves you know!!",
-        "You better not be daydreaming out there?!"
+    public List<Dialog> JobFailDialog = new List<Dialog>{
+        new Dialog{Text="Those shelves aren't going to stack themselves you know!!", Duration = 4},
+        new Dialog{Text="You better not be daydreaming out there?!", Duration = 4}
     };
 
-    public List<string> WrongShelfDialog = new List<string>{
-        "That doesn't go there!!",
-        "Can't you see the signs?!"
+    public List<Dialog> WrongShelfDialog = new List<Dialog>{
+        new Dialog{Text="That doesn't go there!!", Duration = 4},
+        new Dialog{Text="Can't you see the signs?!", Duration = 4}
     };
 
-    public List<string> WrongColourDialog = new List<string>{
-        "**Sigh** How many times have a I told you?! You need to match the colours!!"
+    public List<Dialog> WrongColourDialog = new List<Dialog>{
+        new Dialog{Text="**Sigh** How many times have a I told you?! You need to match the colours!!", Duration = 4}
     };
 
-    public List<string> ShelfFullDialog = new List<string>{
-        "We've already got plenty of those!!"
+    public List<Dialog> ShelfFullDialog = new List<Dialog>{
+        new Dialog{Text="We've already got plenty of those!!", Duration = 4}
     };
 
     void Awake()
@@ -76,13 +76,13 @@ public class AngryBoss : Singleton<AngryBoss>
         }
     }
 
-    private void RespondToPlayer(IList<string> dialogOptions)
+    private void RespondToPlayer(IList<Dialog> dialogOptions)
     {
         var dialog = PickRandomDialog(dialogOptions);
         _paSystem.MakeAnnouncement(dialog);
     }
 
-    private string PickRandomDialog(IList<string> options)
+    private Dialog PickRandomDialog(IList<Dialog> options)
     {
         int index = Random.Range(0, options.Count());
 
