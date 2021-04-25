@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CoreSystems.MenuSystem;
 using Interaction;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,5 +27,17 @@ public class PlayerInput : MonoBehaviour
     public void OnInteract()
     {
         _interaction.Interact();
+    }
+
+    public void OnPause()
+    {
+        if (PauseMenu.Instance.IsPaused)
+        {
+            PauseMenu.Instance.UnpauseGame();
+        }
+        else
+        {
+            PauseMenu.Instance.PauseGame();
+        }
     }
 }

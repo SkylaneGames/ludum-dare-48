@@ -92,7 +92,7 @@ namespace MissionSystem.JobSystem
                 .Select(p => p.Key)
                 .FirstOrDefault();
 
-            if (jobId == null)
+            if (jobId == System.Guid.Empty)
             {
                 return false;
             }

@@ -17,6 +17,7 @@ namespace MissionSystem.JobSimulator
         {
             _missions[missionId].FailMission();
             _missions.Remove(missionId);
+            AngryBoss.Instance.OnJobFail();
             return GetCurrentMissions();
         }
         public Dictionary<Guid, IMission> GetCurrentMissions()

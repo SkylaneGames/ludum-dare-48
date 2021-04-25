@@ -43,21 +43,20 @@ public class ItemShelf : MonoBehaviour, IInteractable
         {
             if (JobSystem.Instance.CompleteJob(item))
             {
-                // TODO: Success - Complete job, increase dream state.
-                Debug.Log("Job Completed");
+                Debug.Log("Complete");
+                AngryBoss.Instance.OnJobSuccess();
             }
             else
             {
-                // TODO: Supervisor - "We already have enough of those on that shelf!"
-                Debug.Log("No job exists for this item");
+                Debug.Log("Shelf full");
+                AngryBoss.Instance.OnShelfFull();
             }
         }
         else
         {
-            Debug.Log("Incorrect Item");
+                Debug.Log("Wrong");
             interacter.Inventory.TakeFirstItem(); // Remove the first item from the player's inventory.
-            // TODO: Supervisor - "That doesn't go there!"
-            //  - If category is right but the colour is wrong, "**Sigh** How many times have I told you? You need to match the colours!"
+            AngryBoss.Instance.OnWrongShelf(Category == item?.Category);
         }
 
         RemoveHighlight();
