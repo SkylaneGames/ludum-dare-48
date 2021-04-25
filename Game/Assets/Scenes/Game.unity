@@ -340,15 +340,21 @@ MonoBehaviour:
   ResponseProbabilityShelfFull: 0.75
   ResponseProbabilityWrongItem: 0.75
   JobFailDialog:
-  - Those shelves aren't going to stack themselves you know!!
-  - You better not be daydreaming out there?!
+  - Text: Those shelves aren't going to stack themselves you know!!
+    Duration: 4
+  - Text: You better not be daydreaming out there?!
+    Duration: 4
   WrongShelfDialog:
-  - That doesn't go there!!
-  - Can't you see the signs?!
+  - Text: That doesn't go there!!
+    Duration: 4
+  - Text: Can't you see the signs?!
+    Duration: 4
   WrongColourDialog:
-  - '**Sigh** How many times have a I told you?! You need to match the colours!!'
+  - Text: '**Sigh** How many times have a I told you?! You need to match the colours!!'
+    Duration: 4
   ShelfFullDialog:
-  - We've already got plenty of those!!
+  - Text: We've already got plenty of those!!
+    Duration: 4
 --- !u!1 &146770145
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +991,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac5bf99180a1b044b9416e92c1a297eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IntroSpeech:
+  - Text: ... I expect you to have these shelves stacked by noon okay?!
+    Duration: 5
+  - Text: Collect any items you need from the warehouse in the top left of the store.
+    Duration: 6
+  - Text: Now get too it!!!
+    Duration: 2
+  - Text: Oh and one more thing....
+    Duration: 3
+  - Text: NO DAYDREAMING THIS TIME!
+    Duration: 4
+  introDelay: 2
 --- !u!4 &530787749
 Transform:
   m_ObjectHideFlags: 0
@@ -1180,8 +1198,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611413946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.007, y: -0.049, z: 0}
+  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
   m_Children:
   - {fileID: 724548678}
   - {fileID: 450710284}
@@ -2503,7 +2521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1648500116
 Transform:
   m_ObjectHideFlags: 0
@@ -2666,7 +2684,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1865985797
 Transform:
   m_ObjectHideFlags: 0

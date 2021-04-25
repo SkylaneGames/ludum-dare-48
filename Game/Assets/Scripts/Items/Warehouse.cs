@@ -22,7 +22,7 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public bool CanInteract(CharacterController interacter)
     {
-        return true;
+        return GameManager.Instance.GameStarted;
     }
 
     public void Highlight()
