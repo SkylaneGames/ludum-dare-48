@@ -182,7 +182,7 @@ jobs:
 
   notify:
     runs-on: windows-latest
-    needs: [deploy-webgl]
+    needs: [deploy-webgl, deploy-win64, deploy-osx, deploy-linux]
     name: Notify Discord
     env:
       itch_url: https://jms777.itch.io/ludum-dare-48 #e.g. https://jms777.itch.io/brackeys2021-1 
