@@ -15,7 +15,7 @@ namespace MissionSystem.JobSimulator
 
         public Dictionary<Guid, IMission> RemoveMission(Guid missionId)
         {
-            _missions[missionId].FailMissionAsync();
+            _missions[missionId].FailMission();
             _missions.Remove(missionId);
             return GetCurrentMissions();
         }
@@ -25,7 +25,8 @@ namespace MissionSystem.JobSimulator
         }
         public void CompleteMission(Guid missionId)
         {
-            _missions[missionId].CompleteMissionAsync();
+            _missions[missionId].CompleteMission();
+            _missions.Remove(missionId);
         }
         public IMission AddNewMission(Item item, float timeToComplete)
         {

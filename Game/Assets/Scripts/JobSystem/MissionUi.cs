@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using MissionSystem.Mission;
@@ -24,11 +25,6 @@ namespace MissionSystem.JobSystem
             if (Mission != null)
             {
                 _slider.normalizedValue = Mission.NormalisedTimeRemaing ?? 0f;
-
-                if ((Mission.TimeRemaining ?? 1f) <= 0f)
-                {
-                    Destroy(this.gameObject);
-                }
             }
         }
 
@@ -37,6 +33,29 @@ namespace MissionSystem.JobSystem
             Mission = mission;
             Image.sprite = mission.Item.Sprite;
             SetSubCategory(mission.Item.SubCategory);
+
+            Mission.MissionCompletedEvent += OnMissionComplete;
+            Mission.MissionFailedEvent += OnMissionFail;
+        }
+
+        private void OnMissionComplete(IMission mission, EventArgs e)
+        {
+            Background.color = Color.green;
+
+            StartCoroutine(WaitThenDestroy());
+        }
+
+        private void OnMissionFail(IMission mission, EventArgs e)
+        {
+            Background.color = Color.red;
+            StartCoroutine(WaitThenDestroy());
+        }
+
+        private IEnumerator WaitThenDestroy()
+        {
+            yield return new WaitForSeconds(1f);
+
+            Destroy(this.gameObject);
         }
 
         public void SetSubCategory(ItemSubCategory category)

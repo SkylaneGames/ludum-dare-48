@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Interaction;
+using MissionSystem.JobSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
 public class ItemShelf : MonoBehaviour, IInteractable
 {
+    public string ShelfId => $"{Category}-{SubCategory}";
+
     public ItemCategory Category;
     public ItemSubCategory SubCategory;
 
@@ -34,18 +37,27 @@ public class ItemShelf : MonoBehaviour, IInteractable
 
     public void Interact(CharacterController interacter, Action callback = null)
     {
-        var item = interacter.Inventory.TakeFirstItem();
-        if (item != null)
+        var item = interacter.Inventory.TakeItem(ShelfId);
+
+        if (item != null && item.Name == ShelfId)
         {
-            if (item.Category == Category && item.SubCategory == SubCategory)
+            if (JobSystem.Instance.CompleteJob(item))
             {
-                // TODO: Success - Complete job.
+                // TODO: Success - Complete job, increase dream state.
+                Debug.Log("Job Completed");
             }
             else
             {
-                // TODO: Fail - Incorrect item for this shelf.
+                Debug.Log("No job exists for this item");
             }
         }
+        else
+        {
+            Debug.Log("Incorrect Item");
+            // TODO: Fail - Incorrect item for this shelf or no job for this one, decrease dream state.
+        }
+
+        RemoveHighlight();
     }
 
     public void RemoveHighlight()

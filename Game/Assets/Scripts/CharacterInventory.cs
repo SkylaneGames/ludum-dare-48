@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,6 +6,9 @@ using UnityEngine;
 
 public class CharacterInventory : MonoBehaviour
 {
+    public event Action<Item> ItemAdded;
+    public event Action<Item> ItemRemoved;
+
     private int _maxSize;
 
     public List<Item> Items;
@@ -22,33 +26,45 @@ public class CharacterInventory : MonoBehaviour
         if (Count < _maxSize)
         {
             Items.Add(item);
+            ItemAdded?.Invoke(item);
             return true;
         }
 
         return false;
     }
 
-    public bool TakeItem(Item item)
+    public void RemoveItems(IEnumerable<Item> items)
     {
-        if (Items.Contains(item))
+        Items.RemoveAll(p => items.Contains(p));
+        foreach (var item in items)
         {
-            Items.Remove(item);
-            return true;
+            RemoveItem(item);
         }
-
-        return false;
     }
 
-    public Item TakeFirstItem()
+    public void Clear()
     {
-        var item = Items.FirstOrDefault();
-
-        if (item != null)
+        foreach (var item in Items)
         {
-            Items.Remove(item);
-            return item;
+            ItemRemoved?.Invoke(item);
         }
 
-        return null;
+        Items.Clear();
+    }
+
+    public void RemoveItem(Item item)
+    {
+        if (item != null && Items.Contains(item))
+        {
+            Items.Remove(item);
+            ItemRemoved?.Invoke(item);
+        }
+    }
+
+    public Item TakeItem(string itemName)
+    {
+        var item = Items.FirstOrDefault(p => p.Name == itemName);
+        RemoveItem(item);
+        return item;
     }
 }

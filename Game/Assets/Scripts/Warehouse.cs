@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Interaction;
+using MissionSystem.JobSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -30,20 +32,22 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public void Interact(CharacterController interacter, Action callback = null)
     {
+        interacter.Inventory.Clear();
         var requiredItems = GetRequiredItems();
 
-        foreach (var item in requiredItems)
+        var newItems = requiredItems.Except(interacter.Inventory.Items);
+
+        foreach (var item in newItems)
         {
-            if (!interacter.Inventory.Items.Contains(item))
-            {
-                interacter.Inventory.AddItem(item);
-            }
+            interacter.Inventory.AddItem(item);
         }
     }
 
     private IEnumerable<Item> GetRequiredItems()
     {
-        throw new NotImplementedException();
+        var items = JobSystem.Instance.GetRequiredItems();
+
+        return items;
     }
 
     public void RemoveHighlight()

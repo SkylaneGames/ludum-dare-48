@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using CoreSystems;
 using MissionSystem.JobSimulator;
 using MissionSystem.Mission;
 using MissionSystem.Task;
@@ -11,24 +12,37 @@ namespace MissionSystem.JobSystem
     public delegate void JobCreated(IMission job);
     public delegate void JobRemoved(System.Guid jobId);
 
-    public class JobSystem: MonoBehaviour
+    public class JobSystem : Singleton<JobSystem>
     {
         public event JobCreated JobCreated;
-        public event JobRemoved JobRemoved;
 
-        private IJobSimulator _jobSimulator = new JobSimulator.JobSimulator();
+        private IJobSimulator _jobSimulator;
         public List<Item> AvailableItems;
+
+        [Range(5, 60)]
         public float MinTimeToCompleteTaskSeconds = 30;
+
+        [Range(10, 60)]
         public float MaxTimeToCompleteTaskSeconds = 60;
+
+        [Range(0, 10)]
         public int MinTasks = 1;
+
+        [Range(0, 10)]
         public int MaxTasks = 7;
-        public float PeriodBetweenUpdates = 10f;
+
+        [Range(0, 15f)]
+        public float MinPeriodBetweenUpdates = 3f;
+
+        [Range(0, 20f)]
+        public float MaxPeriodBetweenUpdates = 10f;
+        
         private float timeRemainingBeforeUpdate = 0f;
         public IEnumerable<IMission> Missions => _jobSimulator.GetCurrentMissions().Values;
 
         void Start()
         {
-            StartLevel();
+            _jobSimulator = new JobSimulator.JobSimulator();
         }
 
         public void Update()
@@ -38,7 +52,7 @@ namespace MissionSystem.JobSystem
             if (timeRemainingBeforeUpdate <= 0f)
             {
                 UpdateLevel();
-                timeRemainingBeforeUpdate = PeriodBetweenUpdates;
+                timeRemainingBeforeUpdate = Random.Range(MinPeriodBetweenUpdates, MaxPeriodBetweenUpdates);
             }
 
             _jobSimulator.UpdateMissions(Time.deltaTime);
@@ -47,14 +61,8 @@ namespace MissionSystem.JobSystem
         public void UpdateLevel()
         {
             var missions = _jobSimulator.GetCurrentMissions();
-            foreach (var keyValuePair in missions
-                .Where(keyValuePair => keyValuePair.Value.TimeToComplete.HasValue && keyValuePair.Value.IsComplete == false)
-                .Where(keyValuePair => keyValuePair.Value.TimeToComplete.HasValue && keyValuePair.Value.TimeToComplete < 0))
-            {
-                _jobSimulator.RemoveMission(keyValuePair.Key);
-            }
 
-            if (_jobSimulator.GetCurrentMissions().Count < Random.Range(MinTasks, MaxTasks))
+            if (missions.Count < Random.Range(MinTasks, MaxTasks))
             {
                 var item = GetRandomItem();
                 var job = _jobSimulator.AddNewMission(item, Random.Range(MinTimeToCompleteTaskSeconds, MaxTimeToCompleteTaskSeconds));
@@ -64,22 +72,43 @@ namespace MissionSystem.JobSystem
 
         private Item GetRandomItem()
         {
-            var item = AvailableItems[Random.Range(0, AvailableItems.Count)];
+            var item = AvailableItems[Random.Range(0, AvailableItems.Count)].CreateInstance();
 
             item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length - 1);
 
             return item;
         }
 
-        public void StartLevel()
+        public bool JobExistsFor(Item item)
         {
-            _jobSimulator = new JobSimulator.JobSimulator();
-            // _jobSimulator.AddNewMission(new MopStain(), 0);
+            return _jobSimulator.GetCurrentMissions().Any(p => p.Value.Item == item);
         }
 
-        private void OnJobRemoved(System.Guid jobId)
+        public bool CompleteJob(Item item)
         {
-            JobRemoved?.Invoke(jobId);
+            var jobId = _jobSimulator.GetCurrentMissions()
+                .Where(p => p.Value.Item == item)
+                .OrderBy(p => p.Value.TimeRemaining)
+                .Select(p => p.Key)
+                .FirstOrDefault();
+
+            if (jobId == null)
+            {
+                return false;
+            }
+
+            _jobSimulator.CompleteMission(jobId);
+
+            return true;
+        }
+
+        public IEnumerable<Item> GetRequiredItems()
+        {
+            var items = _jobSimulator.GetCurrentMissions()
+                .OrderBy(p => p.Value.TimeRemaining)
+                .Select(p => p.Value.Item);
+
+            return items;
         }
     }
 }

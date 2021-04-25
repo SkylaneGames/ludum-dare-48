@@ -8,6 +8,7 @@ namespace MissionSystem.Mission
     {
         public event MissionCompletedEvent MissionCompletedEvent;
         public event MissionFailedEvent MissionFailedEvent;
+
         public Guid MissionId { get; set; }
         public Item Item { get; set; }
         public bool IsComplete { get; set; }
@@ -27,10 +28,7 @@ namespace MissionSystem.Mission
             }
         }
 
-        public Mission()
-        {
-
-        }
+        public Mission() { }
 
         public Mission(float timeToComplete)
         {
@@ -38,13 +36,13 @@ namespace MissionSystem.Mission
             TimeRemaining = timeToComplete;
         }
 
-        public void CompleteMissionAsync()
+        public void CompleteMission()
         {
             IsComplete = true;
             MissionCompletedEvent?.Invoke(this, EventArgs.Empty);
         }
 
-        public void FailMissionAsync()
+        public void FailMission()
         {
             MissionFailedEvent?.Invoke(this, EventArgs.Empty);
         }
