@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: World
-  m_Shader: {fileID: -6465566751694194690, guid: 2669de042b5c56948b8dbbb61c096273, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 6fc2b073c108d8a4096fd1da044b0236, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -49,7 +49,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - InverseSpeed: 50
+    - NoiseScale: 80
     - Percentage: 0
-    - Scale: 31.24
-    m_Colors: []
+    - Radius: 15
+    - Scale: 122.51
+    - Spillage: 1
+    m_Colors:
+    - PlayerPos: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
