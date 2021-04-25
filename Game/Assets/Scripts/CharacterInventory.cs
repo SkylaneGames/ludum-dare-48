@@ -67,4 +67,11 @@ public class CharacterInventory : MonoBehaviour
         RemoveItem(item);
         return item;
     }
+
+    public Item TakeFirstItem()
+    {
+        var item = Items.FirstOrDefault();
+        RemoveItem(item);
+        return item;
+    }
 }

@@ -25,8 +25,11 @@ namespace MissionSystem.JobSimulator
         }
         public void CompleteMission(Guid missionId)
         {
-            _missions[missionId].CompleteMission();
-            _missions.Remove(missionId);
+            if (_missions.ContainsKey(missionId))
+            {
+                _missions[missionId].CompleteMission();
+                _missions.Remove(missionId);
+            }
         }
         public IMission AddNewMission(Item item, float timeToComplete)
         {
