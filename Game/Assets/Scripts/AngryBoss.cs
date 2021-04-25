@@ -42,10 +42,12 @@ public class AngryBoss : Singleton<AngryBoss>
 
     public void OnJobSuccess()
     {
+        DreamVision.Instance.TargetPercentage += 0.05f;
     }
 
     public void OnJobFail()
     {
+        DreamVision.Instance.TargetPercentage -= 0.1f;
         if (!_paSystem.InUse && Random.Range(0f, 1f) < ResponseProbabilityFail)
         {
             RespondToPlayer(JobFailDialog);
@@ -54,6 +56,7 @@ public class AngryBoss : Singleton<AngryBoss>
 
     public void OnShelfFull()
     {
+        DreamVision.Instance.TargetPercentage -= 0.1f;
         if (!_paSystem.InUse && Random.Range(0f, 1f) < ResponseProbabilityShelfFull)
         {
             RespondToPlayer(ShelfFullDialog);
@@ -63,6 +66,7 @@ public class AngryBoss : Singleton<AngryBoss>
     // Parameter 'categoryCorrect': Shows if the player got the correct category of item, but the wrong colour. Can be used to provide hints.
     public void OnWrongShelf(bool categoryCorrect)
     {
+        DreamVision.Instance.TargetPercentage -= 0.1f;
         if (!_paSystem.InUse && Random.Range(0f, 1f) < ResponseProbabilityWrongItem)
         {
             if (categoryCorrect)

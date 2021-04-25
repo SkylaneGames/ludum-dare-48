@@ -19,9 +19,14 @@ public class CharacterMotor : MonoBehaviour
 
     private Vector2 input = Vector2.zero;
 
+    private Animator _animator;
+    private SpriteRenderer[] _spriteRenderers;
+
     void Awake()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
+        _spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
     }
 
     void FixedUpdate()
@@ -32,26 +37,50 @@ public class CharacterMotor : MonoBehaviour
 
     private void UpdateState()
     {
+        bool down = false;
+        bool up = false;
+        bool side = false;
+        bool idle = false;
+
         if (_rigidbody.velocity.y > IdleThreshold)
         {
             State = MovementState.Up;
+            up = true;
         }
         else if (_rigidbody.velocity.y < -IdleThreshold)
         {
             State = MovementState.Down;
+            down = true;
         }
         else if (_rigidbody.velocity.x > IdleThreshold)
         {
             State = MovementState.Right;
+            side = true;
+            foreach (var sprite in _spriteRenderers)
+            {
+                sprite.flipX = true;
+            }
         }
         else if (_rigidbody.velocity.x < -IdleThreshold)
         {
             State = MovementState.Left;
+            side = true;
+            foreach (var sprite in _spriteRenderers)
+            {
+                sprite.flipX = false;
+            }
         }
         else
         {
             State = MovementState.Idle;
+            idle = true;
         }
+
+        _animator.SetBool("Walking.Down", down);
+        _animator.SetBool("Walking.Up", up);
+        _animator.SetBool("Walking.Side", side);
+        _animator.SetBool("Idle", idle);
+        _animator.speed = Speed / 3f;
     }
 
     public void UpdatedMovement(Vector2 input)
