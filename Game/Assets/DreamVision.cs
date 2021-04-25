@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CoreSystems;
 using UnityEngine;
 
-public class DreamVision : MonoBehaviour
+public class DreamVision : Singleton<DreamVision>
 {
     private IEnumerable<Material> _materials;
     public Transform _player;
@@ -11,14 +12,18 @@ public class DreamVision : MonoBehaviour
     [SerializeField]
     [Range(0f, 1f)]
     private float percentage = 0f;
-    public float Percentage
+
+    private float targetPercentage = 0f;
+    public float TargetPercentage
     {
-        get { return percentage; }
+        get { return targetPercentage; }
         set
         {
-            percentage = Mathf.Clamp01(value);
+            targetPercentage = Mathf.Clamp01(value);
         }
     }
+    
+    public float RateOfChangePerSecond = 0.05f;
 
     void Awake()
     {
@@ -35,10 +40,12 @@ public class DreamVision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        percentage = Mathf.MoveTowards(percentage, targetPercentage, RateOfChangePerSecond * Time.deltaTime);
+
         foreach (var material in _materials)
         {
             material.SetVector("PlayerPos", _player.transform.position);
-            material.SetFloat("Percentage", Percentage);
+            material.SetFloat("Percentage", percentage);
         }
 
         // Set any NPCs within a radius of the player (based on percentage) to be enemies.
