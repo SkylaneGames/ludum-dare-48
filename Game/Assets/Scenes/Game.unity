@@ -2616,8 +2616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1807170004}
   percentage: 0
-  InitialDreamDelay: 10
-  DelayAfterSuccess: 2
+  InitialDreamDelay: 2
+  DelayAfterSuccess: 1
   RateOfChangePerSecond: 0.05
 --- !u!4 &1213549019 stripped
 Transform:
