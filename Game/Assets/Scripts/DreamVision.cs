@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using CoreSystems;
+using CoreSystems.MusicSystem;
 using UnityEngine;
 
 public class DreamVision : Singleton<DreamVision>
 {
     private IEnumerable<Material> _materials;
     public Transform _player;
+
+    private MusicManager _music = MusicManager.Instance;
 
     [SerializeField]
     [Range(0f, 1f)]
@@ -75,6 +78,9 @@ public class DreamVision : Singleton<DreamVision>
         {
             GameManager.Instance.TriggerGameOver();
         }
+
+        var musicVolume = 1f - percentage;
+        MusicManager.Instance.SetVolume(MusicTrackIdentifier.MainTrack, musicVolume);
 
         // Set any NPCs within a radius of the player (based on percentage) to be enemies.
     }

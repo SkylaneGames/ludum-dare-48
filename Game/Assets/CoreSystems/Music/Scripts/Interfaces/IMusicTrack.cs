@@ -17,5 +17,7 @@ namespace CoreSystems.MusicSystem
         void FadeOut(Action callback = null);
         void FadeOut(float targetVolume, Action callback = null);
         void FadeOut(float targetVolume, float secondsToVolume, Action callback = null);
+
+        void SetVolume(float volume);
     }
 }

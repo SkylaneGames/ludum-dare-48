@@ -39,5 +39,15 @@ namespace CoreSystems.MusicSystem
                 callback = null;
             }
         }
+
+        public void SetVolume(MusicTrackIdentifier id, float volume)
+        {
+            var selectedTracks = tracks.Where(p => p.Id == id);
+
+            foreach (var track in selectedTracks)
+            {
+                track.SetVolume(volume);
+            }
+        }
     }
 }

@@ -51,10 +51,10 @@ Material:
     m_Floats:
     - InverseSpeed: 50
     - NoiseScale: 80
-    - Percentage: 0
+    - Percentage: 0.8000001
     - Radius: 15
     - Scale: 122.51
     - Spillage: 1
     m_Colors:
-    - PlayerPos: {r: -3.8672638, g: 2.150118, b: 2.150118, a: 0}
+    - PlayerPos: {r: -5.5542984, g: 1.2920245, b: 1.2920245, a: 0}
   m_BuildTextureStacks: []
