@@ -149,9 +149,11 @@ MonoBehaviour:
   ResponseProbabilityShelfFull: 0.75
   ResponseProbabilityWrongItem: 0.75
   JobFailDialog:
-  - Text: Those shelves aren't going to stack themselves you know!!
+  - Text: Those shelves aren't going to stack themselves, y'know...
     Duration: 4
-  - Text: You better not be daydreaming out there?!
+  - Text: You'd better not be daydreaming out there...
+    Duration: 4
+  - Text: I was stacking twice as fast when I worked the floor!
     Duration: 4
   WrongShelfDialog:
   - Text: That doesn't go there!!
@@ -159,7 +161,7 @@ MonoBehaviour:
   - Text: Can't you see the signs?!
     Duration: 4
   WrongColourDialog:
-  - Text: '**Sigh** How many times have a I told you?! You need to match the colours!!'
+  - Text: '**Sigh** How many times have I told you?! You need to match the colours!!'
     Duration: 4
   ShelfFullDialog:
   - Text: We've already got plenty of those!!
@@ -289,8 +291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.8867, y: -13.1729}
-  m_SizeDelta: {x: 570.2427, y: 120.167}
+  m_AnchoredPosition: {x: -45.0004, y: -12.4014}
+  m_SizeDelta: {x: 579.5002, y: 98.5659}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7830660905800483575
 CanvasRenderer:
@@ -347,7 +349,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
+  m_fontSize: 29.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

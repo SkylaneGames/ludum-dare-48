@@ -699,7 +699,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.04099226}
+  m_Offset: {x: 0, y: 0.11805987}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -710,7 +710,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.98, y: 0.81198454}
+  m_Size: {x: 2.98, y: 0.96611977}
   m_EdgeRadius: 0
 --- !u!1 &321189633
 GameObject:
@@ -829,7 +829,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.034160182}
+  m_Offset: {x: 0, y: 0.13111627}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -840,7 +840,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.98, y: 0.7983204}
+  m_Size: {x: 2.98, y: 0.99223256}
   m_EdgeRadius: 0
 --- !u!1 &417111747
 GameObject:
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   IntroSpeech:
   - Text: ... I expect you to have these shelves stacked by noon okay?!
     Duration: 5
-  - Text: Collect any items you need from the warehouse in the top left of the store.
+  - Text: Collect any items you need from the store in the back.
     Duration: 6
   - Text: Now get to it!!!
     Duration: 2
@@ -3275,7 +3275,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.03292787}
+  m_Offset: {x: 0, y: 0.13361305}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3286,7 +3286,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.98, y: 0.79585576}
+  m_Size: {x: 2.98, y: 0.9972261}
   m_EdgeRadius: 0
 --- !u!1 &2028830016
 GameObject:
