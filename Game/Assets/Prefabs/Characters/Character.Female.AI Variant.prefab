@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTimeBetweenInput: 0.5
   maxTimeBetweenInput: 3
+  walkThroughDoor: 1
 --- !u!1001 &3665011848866865651
 PrefabInstance:
   m_ObjectHideFlags: 0

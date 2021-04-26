@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Percentage: 0.20000002
+    - Percentage: 0
     m_Colors:
-    - PlayerPos: {r: 3.8309171, g: 1.0281668, b: 1.0281668, a: 0}
+    - PlayerPos: {r: -4.714299, g: 1.1233138, b: 1.1233138, a: 0}
   m_BuildTextureStacks: []

@@ -97,6 +97,9 @@ namespace MissionSystem.JobSystem
 
         public bool CompleteJob(Item item)
         {
+            MinTimeToCompleteTaskSeconds = Mathf.Max(5, MinTimeToCompleteTaskSeconds - 0.2f);
+            MaxTimeToCompleteTaskSeconds = Mathf.Max(10, MaxTimeToCompleteTaskSeconds - 0.2f);
+
             var jobId = _jobSimulator.GetCurrentMissions()
                 .Where(p => p.Value.Item == item)
                 .OrderBy(p => p.Value.TimeRemaining)

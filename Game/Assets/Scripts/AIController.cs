@@ -14,6 +14,8 @@ public class AIController : MonoBehaviour
 
     private Collider2D _collider;
 
+    public bool walkThroughDoor = true;
+
     void Awake()
     {
         _motor = GetComponent<CharacterMotor>();
@@ -23,7 +25,10 @@ public class AIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        WalkInDoor();
+        if (walkThroughDoor)
+        {
+            WalkInDoor();
+        }
     }
 
     private void WalkInDoor()

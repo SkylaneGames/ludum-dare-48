@@ -7,7 +7,10 @@ Entry for the [48th Ludum Dare](https://ldjam.com/events/ludum-dare/48) game jam
 Hosted on [itch.io](https://jms777.itch.io/ludum-dare-48)
 
 ## Theme
--- Enter theme here --
+Deeper and Deeper
+
+# Assets Used
+Music: https://www.bensound.com/royalty-free-music/track/hey-happy-cheerful
 
 # Contributors
 Name | Role
@@ -15,4 +18,3 @@ Name | Role
 Jeremy | Developer / Unity
 Rob | Unity / Art
 Harvey | Developer
-Benji | Art
