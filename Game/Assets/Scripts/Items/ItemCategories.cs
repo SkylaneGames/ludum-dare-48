@@ -1,6 +1,6 @@
 public enum ItemCategory
 {
-    Fruit, Fish, Meat, Pie, Bread, Clothes, DVDs, 
+    Fruit, Fish, Bread, Clothes, DVDs, Party, Chocolate
 }
 
 public enum ItemSubCategory

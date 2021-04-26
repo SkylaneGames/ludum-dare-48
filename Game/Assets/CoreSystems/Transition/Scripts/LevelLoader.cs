@@ -18,7 +18,8 @@ namespace CoreSystems.TransitionSystem
     {
         Splash,
         Menu,
-        Game
+        Game,
+        GameOver
     }
 
     public class LevelLoader : Singleton<LevelLoader>

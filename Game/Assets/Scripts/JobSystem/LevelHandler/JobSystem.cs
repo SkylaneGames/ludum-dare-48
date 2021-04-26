@@ -74,7 +74,18 @@ namespace MissionSystem.JobSystem
         {
             var item = AvailableItems[Random.Range(0, AvailableItems.Count)].CreateInstance();
 
-            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length);
+            var subCategories = System.Enum.GetNames(typeof(ItemSubCategory));
+            if (item.Category == ItemCategory.Chocolate)
+            {
+                item.SubCategory = Random.Range(0f,1f) > 0.5f ? ItemSubCategory.Red : ItemSubCategory.Blue;
+            } else if (item.Category == ItemCategory.Party)
+            {
+                item.SubCategory = Random.Range(0f,1f) > 0.5f ? ItemSubCategory.Purple : ItemSubCategory.Orange;
+            }
+            else
+            {
+                item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length);
+            }
 
             return item;
         }
@@ -86,6 +97,9 @@ namespace MissionSystem.JobSystem
 
         public bool CompleteJob(Item item)
         {
+            MinTimeToCompleteTaskSeconds = Mathf.Max(5, MinTimeToCompleteTaskSeconds - 0.2f);
+            MaxTimeToCompleteTaskSeconds = Mathf.Max(10, MaxTimeToCompleteTaskSeconds - 0.2f);
+
             var jobId = _jobSimulator.GetCurrentMissions()
                 .Where(p => p.Value.Item == item)
                 .OrderBy(p => p.Value.TimeRemaining)

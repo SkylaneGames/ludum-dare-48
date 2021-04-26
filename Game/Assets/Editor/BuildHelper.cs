@@ -2,7 +2,7 @@ using UnityEditor;
 
 class BuildHelper
 {
-    static string[] scenes = { "Assets/Scenes/Splash.unity","Assets/Scenes/Main Menu.unity","Assets/Scenes/Game.unity" };
+    static string[] scenes = { "Assets/Scenes/Splash.unity","Assets/Scenes/Main Menu.unity","Assets/Scenes/Game.unity", "Assets/Scenes/GameOver.unity" };
     
     static void PerformBuildWebGL()
     {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using CoreSystems;
+using CoreSystems.TransitionSystem;
 using MissionSystem.JobSystem;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class GameManager : Singleton<GameManager>
     public float introDelay = 2f;
 
     public bool GameStarted { get; private set; }
+    private bool gameover = false;
 
     void Awake()
     {
@@ -54,7 +56,11 @@ public class GameManager : Singleton<GameManager>
     // Player has succumbed to the daydream and goes to confront the boss.
     public void TriggerGameOver()
     {
+        if (gameover) return;
+
+        gameover = true;
         _player.DisableInput();
+        LevelLoader.Instance.LoadLevel(Level.GameOver);
     }
 
     // Update is called once per frame
