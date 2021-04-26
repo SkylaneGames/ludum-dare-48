@@ -48,6 +48,11 @@ namespace CoreSystems.MusicSystem
             }
         }
 
+        public void SetVolume(float volume)
+        {
+            audioSource.volume = Mathf.Lerp(0, originalVolume, volume);
+        }
+
         public void FadeIn(Action callback = null) => FadeIn(originalVolume, FadeTime, callback);
         public void FadeIn(float targetVolume, Action callback = null) => FadeIn(targetVolume, FadeTime, callback);
         public void FadeIn(float targetVolume, float secondsToVolume, Action callback = null) => Fade(true, targetVolume, secondsToVolume, callback);

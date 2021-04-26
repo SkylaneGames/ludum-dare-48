@@ -2,6 +2,6 @@
 {
     public enum MusicTrackIdentifier
     {
-        MainTrack, AdditionalTrack1
+        MainTrack, DreamTrack
     }
 }
