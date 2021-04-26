@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterMotor))]
+[RequireComponent(typeof(UnityEngine.InputSystem.PlayerInput))]
 public class PlayerInput : MonoBehaviour
 {
     protected CharacterMotor _motor;
