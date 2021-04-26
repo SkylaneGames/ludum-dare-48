@@ -622,7 +622,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.54
+  orthographic size: 5.4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -850,10 +850,22 @@ MonoBehaviour:
     Duration: 2
   - Text: '[You] - NOTHING IS EVER GOOD ENOUGH FOR YOU!!'
     Duration: 2
-  - Text: ....
+  - Text: '[Boss] - ...'
+    Duration: 2
+  - Text: '[You] - ...'
+    Duration: 2
+  - Text: '[Boss] - ...'
+    Duration: 2
+  - Text: '[Boss] - How DARE you talk to me like that.'
     Duration: 3
-  - Text: '[Boss] - YOUR FIRED!!'
-    Duration: 1
+  - Text: '[Boss] - A few more years... and you could''ve been like me.'
+    Duration: 4
+  - Text: '[Boss] - But now, I only have one more thing to say to you.'
+    Duration: 4
+  - Text: '[Boss] - ...'
+    Duration: 2
+  - Text: '[Boss] - YOU''RE FIRED!!'
+    Duration: 2
 --- !u!222 &6995984472824920640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -909,7 +921,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34
+  m_fontSize: 33.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -967,8 +979,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.7210083, y: -30.404999}
-  m_SizeDelta: {x: 680.5738, y: 114.5569}
+  m_AnchoredPosition: {x: -8.0763, y: -30.404984}
+  m_SizeDelta: {x: 651.7618, y: 90.4353}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6995984472824920643
 GameObject:
@@ -1041,11 +1053,11 @@ RectTransform:
   m_Father: {fileID: 6995984471780556835}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 763.4023, y: 239.87878}
-  m_Pivot: {x: 1, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &6995984473230378771
 GameObject:
   m_ObjectHideFlags: 0
