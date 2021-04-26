@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-guid: 6f61ec1e9c3d38a47905c34a381a936c
+guid: ae49a990b64c7ec4a85714f39e9ad88e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4878258722340786389
-    second: spritesheet_skin_front_0
-  - first:
-      213: 640772109041564893
-    second: spritesheet_skin_front_1
-  - first:
-      213: -4830796058943417120
-    second: spritesheet_skin_front_2
-  - first:
-      213: 7888240109570551987
-    second: spritesheet_skin_front_3
-  - first:
-      213: -3217795080748920686
-    second: spritesheet_skin_front_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -47,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: -1
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -56,12 +41,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 350
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -152,116 +137,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spritesheet_skin_front_0
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 0
-        width: 169
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d0d29b367e03b340800000000000000
-      internalID: 4878258722340786389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_skin_front_1
-      rect:
-        serializedVersion: 2
-        x: 1014
-        y: 0
-        width: 169
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddc766596da74e800800000000000000
-      internalID: 640772109041564893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_skin_front_2
-      rect:
-        serializedVersion: 2
-        x: 1183
-        y: 0
-        width: 169
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0e4125c349095fcb0800000000000000
-      internalID: -4830796058943417120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_skin_front_3
-      rect:
-        serializedVersion: 2
-        x: 1352
-        y: 0
-        width: 169
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b0f0f10698a87d60800000000000000
-      internalID: 7888240109570551987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spritesheet_skin_front_4
-      rect:
-        serializedVersion: 2
-        x: 1521
-        y: 0
-        width: 169
-        height: 428
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29016f33c681853d0800000000000000
-      internalID: -3217795080748920686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dd504c683aa58804bb3a9badb20d6c11
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

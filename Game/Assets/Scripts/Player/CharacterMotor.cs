@@ -31,8 +31,8 @@ public class CharacterMotor : MonoBehaviour
 
     void FixedUpdate()
     {
-        _rigidbody.velocity = input * Speed * directionMultiplier;
         UpdateState();
+        _rigidbody.velocity = input * Speed * directionMultiplier;
 
         var updatedZPos = transform.position;
         updatedZPos.z = updatedZPos.y;
