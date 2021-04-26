@@ -10,8 +10,6 @@ public class DreamVision : Singleton<DreamVision>
     private IEnumerable<Material> _materials;
     public Transform _player;
 
-    private MusicManager _music = MusicManager.Instance;
-
     [SerializeField]
     [Range(0f, 1f)]
     private float percentage = 0f;
@@ -80,7 +78,7 @@ public class DreamVision : Singleton<DreamVision>
         }
 
         var musicVolume = 1f - percentage;
-        MusicManager.Instance.SetVolume(MusicTrackIdentifier.MainTrack, musicVolume);
+        MusicManager.Instance?.SetVolume(MusicTrackIdentifier.MainTrack, musicVolume);
 
         // Set any NPCs within a radius of the player (based on percentage) to be enemies.
     }
