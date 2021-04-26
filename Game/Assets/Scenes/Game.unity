@@ -986,7 +986,7 @@ MonoBehaviour:
   MinTasks: 1
   MaxTasks: 5
   MinPeriodBetweenUpdates: 1
-  MaxPeriodBetweenUpdates: 0
+  MaxPeriodBetweenUpdates: 3
 --- !u!4 &321189635
 Transform:
   m_ObjectHideFlags: 0

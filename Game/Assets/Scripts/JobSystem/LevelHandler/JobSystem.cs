@@ -32,10 +32,10 @@ namespace MissionSystem.JobSystem
         public int MaxTasks = 7;
 
         [Range(0, 15f)]
-        public float MinPeriodBetweenUpdates = 3f;
+        public float MinPeriodBetweenUpdates = 1f;
 
         [Range(0, 20f)]
-        public float MaxPeriodBetweenUpdates = 10f;
+        public float MaxPeriodBetweenUpdates = 3f;
         
         private float timeRemainingBeforeUpdate = 0f;
         public IEnumerable<IMission> Missions => _jobSimulator.GetCurrentMissions().Values;
