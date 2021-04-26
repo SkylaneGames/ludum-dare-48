@@ -27,7 +27,11 @@ public class ItemShelf : MonoBehaviour, IInteractable
 
     public bool CanInteract(CharacterController interacter)
     {
-        return interacter.Inventory.Items.FirstOrDefault() != null;
+        var player = interacter as PlayerController;
+        
+        if (player == null) return false;
+
+        return player.Inventory.Items.FirstOrDefault() != null;
     }
 
     public void Highlight()
@@ -37,7 +41,8 @@ public class ItemShelf : MonoBehaviour, IInteractable
 
     public void Interact(CharacterController interacter, Action callback = null)
     {
-        var item = interacter.Inventory.TakeItem(ShelfId);
+        var player = interacter as PlayerController;
+        var item = player?.Inventory.TakeItem(ShelfId);
 
         if (item != null && item.Name == ShelfId)
         {
@@ -55,7 +60,7 @@ public class ItemShelf : MonoBehaviour, IInteractable
         else
         {
                 Debug.Log("Wrong");
-            interacter.Inventory.TakeFirstItem(); // Remove the first item from the player's inventory.
+            player?.Inventory.TakeFirstItem(); // Remove the first item from the player's inventory.
             AngryBoss.Instance.OnWrongShelf(Category == item?.Category);
         }
 

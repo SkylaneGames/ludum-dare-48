@@ -15,6 +15,8 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public InteractionHighlight HighlightObject { get; private set; }
 
+    public Animator DoorAnimator;
+
     void Awake()
     {
         HighlightObject = GetComponentInChildren<InteractionHighlight>();
@@ -22,6 +24,10 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public bool CanInteract(CharacterController interacter)
     {
+        var player = interacter as PlayerController;
+
+        if (player == null) return false;
+
         return GameManager.Instance.GameStarted;
     }
 
@@ -32,14 +38,19 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public void Interact(CharacterController interacter, Action callback = null)
     {
-        interacter.Inventory.Clear();
+        var player = interacter as PlayerController;
+
+        if (player == null) return;
+
+        DoorAnimator.SetTrigger("Open");
+        player.Inventory.Clear();
         var requiredItems = GetRequiredItems();
 
-        var newItems = requiredItems.Except(interacter.Inventory.Items);
+        var newItems = requiredItems.Except(player.Inventory.Items);
 
         foreach (var item in newItems)
         {
-            interacter.Inventory.AddItem(item);
+            player.Inventory.AddItem(item);
         }
     }
 

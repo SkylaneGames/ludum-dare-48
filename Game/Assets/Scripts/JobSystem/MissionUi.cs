@@ -68,9 +68,6 @@ namespace MissionSystem.JobSystem
                 case ItemSubCategory.Orange:
                     Background.color = new Color(90 / 100f, 67 / 100f, 29 / 100f);
                     break;
-                case ItemSubCategory.Green:
-                    Background.color = new Color(45 / 100f, 77 / 100f, 58 / 100f);
-                    break;
                 case ItemSubCategory.Blue:
                     Background.color = new Color(21 / 100f, 61 / 100f, 74 / 100f);
                     break;

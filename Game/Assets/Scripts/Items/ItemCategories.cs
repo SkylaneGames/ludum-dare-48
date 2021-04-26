@@ -5,5 +5,5 @@ public enum ItemCategory
 
 public enum ItemSubCategory
 {
-    Red, Orange, Green, Blue, Purple
+    Red, Orange, Blue, Purple
 }

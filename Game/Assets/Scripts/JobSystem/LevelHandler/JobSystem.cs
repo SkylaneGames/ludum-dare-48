@@ -62,7 +62,7 @@ namespace MissionSystem.JobSystem
         {
             var missions = _jobSimulator.GetCurrentMissions();
 
-            if (missions.Count < Random.Range(MinTasks, MaxTasks))
+            if (missions.Count < Random.Range(MinTasks, MaxTasks + 1))
             {
                 var item = GetRandomItem();
                 var job = _jobSimulator.AddNewMission(item, Random.Range(MinTimeToCompleteTaskSeconds, MaxTimeToCompleteTaskSeconds));
@@ -74,7 +74,7 @@ namespace MissionSystem.JobSystem
         {
             var item = AvailableItems[Random.Range(0, AvailableItems.Count)].CreateInstance();
 
-            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length - 1);
+            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length);
 
             return item;
         }
