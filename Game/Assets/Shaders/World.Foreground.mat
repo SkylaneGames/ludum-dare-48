@@ -51,7 +51,7 @@ Material:
     m_Floats:
     - InverseSpeed: 50
     - NoiseScale: 80
-    - Percentage: 0
+    - Percentage: 0.427904
     - Radius: 15
     - Scale: 122.51
     - Spillage: 1

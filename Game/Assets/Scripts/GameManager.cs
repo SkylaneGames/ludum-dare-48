@@ -23,6 +23,7 @@ public class GameManager : Singleton<GameManager>
         _jobSystem.enabled = false;
         _angryBoss = FindObjectOfType<AngryBoss>();
         _paSystem = FindObjectOfType<PASystem>();
+        _player = FindObjectOfType<PlayerController>();
     }
 
     // Start is called before the first frame update

@@ -62,7 +62,7 @@ namespace MissionSystem.JobSystem
         {
             var missions = _jobSimulator.GetCurrentMissions();
 
-            if (missions.Count < Random.Range(MinTasks, MaxTasks))
+            if (missions.Count < Random.Range(MinTasks, MaxTasks + 1))
             {
                 var item = GetRandomItem();
                 var job = _jobSimulator.AddNewMission(item, Random.Range(MinTimeToCompleteTaskSeconds, MaxTimeToCompleteTaskSeconds));

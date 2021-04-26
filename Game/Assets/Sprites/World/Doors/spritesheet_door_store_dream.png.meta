@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: dae4f099ac56d77428e5aa1c71d46787
+guid: ea4e471aa71ca8a4f856b31e6ebe8906
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6798276920274149725
-    second: spritesheet_conveyer_0
+      213: -789317888641012689
+    second: spritesheet_door_store_0
   - first:
-      213: 5352633465662824477
-    second: spritesheet_conveyer_1
+      213: 2537533625534754806
+    second: spritesheet_door_store_1
   - first:
-      213: -1928605967671473692
-    second: spritesheet_conveyer_2
+      213: 7285548367907132373
+    second: spritesheet_door_store_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet_conveyer_0
+      name: spritesheet_door_store_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 247
-        height: 31
+        width: 169
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ae925ae82ba7a1a0800000000000000
-      internalID: -6798276920274149725
+      spriteID: f2ce0b0ff87cb05f0800000000000000
+      internalID: -789317888641012689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_conveyer_1
+      name: spritesheet_door_store_1
       rect:
         serializedVersion: 2
-        x: 247
+        x: 169
         y: 0
-        width: 247
-        height: 31
+        width: 169
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1063bd07cf584a40800000000000000
-      internalID: 5352633465662824477
+      spriteID: 6ffab935361273320800000000000000
+      internalID: 2537533625534754806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_conveyer_2
+      name: spritesheet_door_store_2
       rect:
         serializedVersion: 2
-        x: 494
+        x: 338
         y: 0
-        width: 247
-        height: 31
+        width: 169
+        height: 127
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +204,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e94e3137173c35e0800000000000000
-      internalID: -1928605967671473692
+      spriteID: 5d3180fd3a77b1560800000000000000
+      internalID: 7285548367907132373
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 13a5f2114ad359244847f0b75b825185
+    spriteID: 9e74ddf21454b4a409ec86df61652731
     internalID: 0
     vertices: []
     indices: 
