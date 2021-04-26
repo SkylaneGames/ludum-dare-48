@@ -986,7 +986,7 @@ MonoBehaviour:
   MinTasks: 1
   MaxTasks: 5
   MinPeriodBetweenUpdates: 1
-  MaxPeriodBetweenUpdates: 0
+  MaxPeriodBetweenUpdates: 3
 --- !u!4 &321189635
 Transform:
   m_ObjectHideFlags: 0
@@ -2616,8 +2616,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1807170004}
   percentage: 0
-  InitialDreamDelay: 10
-  DelayAfterSuccess: 2
+  InitialDreamDelay: 2
+  DelayAfterSuccess: 1
   RateOfChangePerSecond: 0.05
 --- !u!4 &1213549019 stripped
 Transform:
