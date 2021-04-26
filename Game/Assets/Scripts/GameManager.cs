@@ -9,6 +9,7 @@ public class GameManager : Singleton<GameManager>
     private JobSystem _jobSystem;
     private AngryBoss _angryBoss;
     private PASystem _paSystem;
+    private PlayerController _player;
 
     public Dialog[] IntroSpeech;
 
@@ -47,6 +48,12 @@ public class GameManager : Singleton<GameManager>
     {
         _jobSystem.enabled = true;
         GameStarted = true;
+    }
+
+    // Player has succumbed to the daydream and goes to confront the boss.
+    public void TriggerGameOver()
+    {
+        _player.DisableInput();
     }
 
     // Update is called once per frame

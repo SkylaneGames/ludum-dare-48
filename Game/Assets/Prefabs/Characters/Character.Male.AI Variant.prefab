@@ -23,7 +23,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3993197745683407727, guid: d05eb9cd20f22574e98833745fbc1f0d, type: 3}
       propertyPath: m_Name
-      value: Character.Male.AI
+      value: Character.Male.AI Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3993197745683407735, guid: d05eb9cd20f22574e98833745fbc1f0d, type: 3}
       propertyPath: m_RootOrder
@@ -31,11 +31,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3993197745683407735, guid: d05eb9cd20f22574e98833745fbc1f0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.88
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3993197745683407735, guid: d05eb9cd20f22574e98833745fbc1f0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.466
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3993197745683407735, guid: d05eb9cd20f22574e98833745fbc1f0d, type: 3}
       propertyPath: m_LocalPosition.z

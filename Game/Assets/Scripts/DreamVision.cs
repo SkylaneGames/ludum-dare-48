@@ -42,7 +42,7 @@ public class DreamVision : Singleton<DreamVision>
 
     public void DecreaseDreamState(float amount)
     {
-        StopCoroutine("DaydreamAfter");
+        // StopCoroutine("DaydreamAfter");
         TargetPercentage -= amount;
     }
 
@@ -69,6 +69,11 @@ public class DreamVision : Singleton<DreamVision>
         {
             material.SetVector("PlayerPos", _player.transform.position);
             material.SetFloat("Percentage", percentage);
+        }
+
+        if (percentage >= 1f)
+        {
+            GameManager.Instance.TriggerGameOver();
         }
 
         // Set any NPCs within a radius of the player (based on percentage) to be enemies.

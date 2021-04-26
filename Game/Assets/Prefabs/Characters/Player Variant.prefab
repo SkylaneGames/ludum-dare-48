@@ -62,7 +62,7 @@ MonoBehaviour:
   ShirtColours:
   - {r: 0, g: 0.8282523, b: 1, a: 1}
   TrouserColours:
-  - {r: 0.239, g: 0.161, b: 0.137, a: 1}
+  - {r: 0.6037736, g: 0.45699263, b: 0.41295835, a: 1}
   HairRenderer: {fileID: 6260645084034553940}
   ShirtRenderer: {fileID: 6260645084727074500}
   SkinRenderer: {fileID: 6260645084188980051}

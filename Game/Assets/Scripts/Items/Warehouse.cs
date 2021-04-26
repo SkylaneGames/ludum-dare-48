@@ -15,6 +15,8 @@ public class Warehouse : MonoBehaviour, IInteractable
 
     public InteractionHighlight HighlightObject { get; private set; }
 
+    public Animator DoorAnimator;
+
     void Awake()
     {
         HighlightObject = GetComponentInChildren<InteractionHighlight>();
@@ -40,6 +42,7 @@ public class Warehouse : MonoBehaviour, IInteractable
 
         if (player == null) return;
 
+        DoorAnimator.SetTrigger("Open");
         player.Inventory.Clear();
         var requiredItems = GetRequiredItems();
 

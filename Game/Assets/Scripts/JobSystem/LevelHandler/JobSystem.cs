@@ -74,7 +74,7 @@ namespace MissionSystem.JobSystem
         {
             var item = AvailableItems[Random.Range(0, AvailableItems.Count)].CreateInstance();
 
-            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length - 1);
+            item.SubCategory = (ItemSubCategory)UnityEngine.Random.Range(0, System.Enum.GetNames(typeof(ItemSubCategory)).Length);
 
             return item;
         }
